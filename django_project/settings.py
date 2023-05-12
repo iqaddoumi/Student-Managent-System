@@ -77,8 +77,10 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django_dynamodb_backend',
-        'NAME': 'students',
+           'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django_dynamodb_backend',
+#         'NAME': 'students',
         'REGION_NAME': 'eu-central-1',
         'AWS_ACCESS_KEY_ID': 'AKIAWPNZNSLJGFLBFG6R',
         'AWS_SECRET_ACCESS_KEY': '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',
