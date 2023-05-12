@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+ALLOWED_HOSTS = ['3.74.150.125']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django_dynamodb_backend',
+        'NAME': 'students',
+        'REGION_NAME': 'eu-central-1',
+        'AWS_ACCESS_KEY_ID': 'AKIAWPNZNSLJGFLBFG6R',
+        'AWS_SECRET_ACCESS_KEY': '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',
+        'AWS_DEFAULT_ACL': None,
+        'AWS_AUTO_CREATE_TABLE': True,
     }
 }
 
